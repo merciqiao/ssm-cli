@@ -5,11 +5,8 @@ import com.yingu.project.persistence.mysql.entity.CourseEntityExample;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
 @Repository
 public interface CourseEntityMapper {
-    int countByExample(CourseEntityExample example);
-
     int deleteByPrimaryKey(Integer id);
 
     int insert(CourseEntity record);

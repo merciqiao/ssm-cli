@@ -13,8 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 
 public class ResponseResult<T> {
-    private Status status;
-    private String message;
-    private List<T> data = new ArrayList();
+    public Status status;
+    public String message;
+    public List<T> data = new ArrayList();
 
 }
