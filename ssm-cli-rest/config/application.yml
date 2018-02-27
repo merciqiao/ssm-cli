@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: ssm-cli-rest
+  profiles:
+    active: dev
+
+server:
+  port: 8802
+
+logging:
+  config: config/logback.xml
+
+---
+spring:
+  profiles: dev
+  datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:mysql://localhost:3306/mytest?autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2b8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      hikari:
+        idle-timeout: 150000
+mybatis:
+  typeAliasesPackage: com.yingu.project.persistence.mysql.entity
+#  mapperLocations: classpath:src/mapper/*.xml
+  mapperLocations: classpath*:com/yingu/project/persistence/mysql/mapping/*.xml
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:9001/eureka/
+
+
+
