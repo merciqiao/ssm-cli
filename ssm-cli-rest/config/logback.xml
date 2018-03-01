@@ -78,5 +78,6 @@
             <appender-ref ref="FILE"/>
         </root>
     </springProfile>
+    <!--mapper日志-->
     <logger name="com.yingu.project.persistence.mysql.mapper" level="DEBUG"></logger>
 </configuration>
