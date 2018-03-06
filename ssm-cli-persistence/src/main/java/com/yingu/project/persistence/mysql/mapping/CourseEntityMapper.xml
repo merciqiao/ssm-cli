@@ -8,6 +8,7 @@
     <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
     <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
     <result column="isdel" property="isdel" jdbcType="VARCHAR" />
+    <result column="task_id" property="taskId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -39,7 +40,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, teacherid, createtime, updatetime, isdel
+    id, name, teacherid, createtime, updatetime, isdel, task_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yingu.project.persistence.mysql.entity.CourseEntityExample" >
     select
@@ -68,11 +69,11 @@
   </delete>
   <insert id="insert" parameterType="com.yingu.project.persistence.mysql.entity.CourseEntity" >
     insert into course (id, name, teacherid, 
-      createtime, updatetime, isdel
-      )
+      createtime, updatetime, isdel, 
+      task_id)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{teacherid,jdbcType=INTEGER}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{isdel,jdbcType=VARCHAR}
-      )
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP}, #{isdel,jdbcType=VARCHAR}, 
+      #{taskId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.yingu.project.persistence.mysql.entity.CourseEntity" >
     insert into course
@@ -95,6 +96,9 @@
       <if test="isdel != null" >
         isdel,
       </if>
+      <if test="taskId != null" >
+        task_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -114,6 +118,9 @@
       </if>
       <if test="isdel != null" >
         #{isdel,jdbcType=VARCHAR},
+      </if>
+      <if test="taskId != null" >
+        #{taskId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -135,6 +142,9 @@
       <if test="isdel != null" >
         isdel = #{isdel,jdbcType=VARCHAR},
       </if>
+      <if test="taskId != null" >
+        task_id = #{taskId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -144,7 +154,8 @@
       teacherid = #{teacherid,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       updatetime = #{updatetime,jdbcType=TIMESTAMP},
-      isdel = #{isdel,jdbcType=VARCHAR}
+      isdel = #{isdel,jdbcType=VARCHAR},
+      task_id = #{taskId,jdbcType=BIGINT}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

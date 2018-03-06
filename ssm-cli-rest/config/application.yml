@@ -21,6 +21,9 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       hikari:
         idle-timeout: 150000
+  data:
+      mongodb:
+        uri: mongodb://172.24.132.127:27017/risk_antifraud
 mybatis:
   typeAliasesPackage: com.yingu.project.persistence.mysql.entity
 #  mapperLocations: classpath:src/mapper/*.xml

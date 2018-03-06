@@ -15,6 +15,8 @@ public class CourseEntity {
 
     private String isdel;
 
+    private Long taskId;
+
     public Integer getId() {
         return id;
     }
@@ -61,5 +63,13 @@ public class CourseEntity {
 
     public void setIsdel(String isdel) {
         this.isdel = isdel == null ? null : isdel.trim();
+    }
+
+    public Long getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(Long taskId) {
+        this.taskId = taskId;
     }
 }
