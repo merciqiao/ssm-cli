@@ -21,10 +21,17 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       hikari:
         idle-timeout: 150000
+  data:
+    neo4j:
+      username: neo4j
+      password: 123.abc
+      uri: http://localhost:7474
 mybatis:
   typeAliasesPackage: com.yingu.project.persistence.mysql.entity
 #  mapperLocations: classpath:src/mapper/*.xml
   mapperLocations: classpath*:com/yingu/project/persistence/mysql/mapping/*.xml
+
+
 #eureka:
 #  client:
 #    serviceUrl:
