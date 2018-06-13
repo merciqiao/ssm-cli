@@ -23,7 +23,7 @@ spring:
         idle-timeout: 150000
   data:
       mongodb:
-        uri: mongodb://172.24.132.127:27017/risk_antifraud
+        uri: mongodb://localhost:27017/risk_antifraud
 mybatis:
   typeAliasesPackage: com.yingu.project.persistence.mysql.entity
 #  mapperLocations: classpath:src/mapper/*.xml

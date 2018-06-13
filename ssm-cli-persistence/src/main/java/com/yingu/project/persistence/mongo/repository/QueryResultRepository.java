@@ -5,6 +5,9 @@ package com.yingu.project.persistence.mongo.repository;
 
 
 import com.yingu.project.persistence.mongo.entity.QueryResult;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -35,6 +38,12 @@ public interface QueryResultRepository extends MongoRepository<QueryResult, Stri
 
     List<QueryResult> findAllByCustomerId(String customerId);
 
+    /**
+     * 分页查询
+     * @param pageable
+     * @return
+     */
+    List<QueryResult> findByInterfaceId( String interfaceId ,Pageable pageable);
 
 
 }
